@@ -1,5 +1,6 @@
-// it('works!!', () => {});
-it('Shows an autocomplete', () => {
+// this will setup the testing environment for every single test(it statement)
+beforeEach(() => {
+    document.querySelector('#target').innerHTML = '';
     createAutoComplete({
         root: document.querySelector('#target'),
         fetchData() {
@@ -13,8 +14,13 @@ it('Shows an autocomplete', () => {
             return movie.Title;
         },
     });
+});
 
+// it('works!!', () => {});
+it('Dropdown starts closed', () => {
     const dropdown = document.querySelector('.dropdown');
 
     expect(dropdown.className).not.to.include('is-active');
 });
+
+it('After searching, dropdown opens up', () => {});
