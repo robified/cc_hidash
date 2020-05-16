@@ -1,16 +1,16 @@
 const assert = require('assert');
 const { forEach, map } = require('./index');
 
-const test = (description, func) => {
-    console.log('----', description);
-    try {
-        func();
-    } catch (error) {
-        console.log(error.message);
-    }
-};
+// const test = (description, func) => {
+//     console.log('----', description);
+//     try {
+//         func();
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+// };
 
-test('The forEach function', () => {
+it('The forEach function', () => {
     // the test for forEach
     console.log('Test for forEach');
     let sum = 0;
@@ -26,10 +26,10 @@ test('The forEach function', () => {
     // console.log("DIDN'T GET HERE!!!");
 
     // this replace the if statement above
-    assert.strictEqual(sum, 7, 'Expected forEach to sum the array');
+    assert.strictEqual(sum, 6, 'Expected forEach to sum the array');
 });
 
-test('The mapfunction', () => {
+it('The map function', () => {
     // the test for map
     console.log('Test for map');
     const result = map([1, 2, 3], (value) => {
